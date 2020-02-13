@@ -10,6 +10,18 @@ body {
 }
 
 
+/* OVERLAY */
+
+body:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(50, 0, 0, 0.4);
+    z-index: -1;
+}
+
+
 /*#login h1 a {
 	visibility: collapse;
 	position: absolute;
@@ -63,7 +75,7 @@ body {
 
 #login h1:after {
     content: "Siciliano Photo";
-    font-family: Garamond, 'Times New Roman', serif;
+    font-family: Monserrat, sans-serif;
     color: rgba(255, 255, 255, 0.7);
     text-shadow: none;
     font-size: 34px;
@@ -75,7 +87,7 @@ body {
     margin-top: 20px;
     margin-left: 0;
     padding: 26px 24px 46px;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.6);
     -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .13);
     box-shadow: 0 1px 3px rgba(0, 0, 0, .13);
     border-radius: 10px 10px 10px 10px;
