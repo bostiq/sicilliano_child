@@ -22,11 +22,13 @@ require_once('divi-children-engine/divi_children_engine.php');
 function my_login_logo() { ?>
   <style type="text/css">
       #login h1 a, .login h1 a {
-          background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/img/SicilianoCircle_512.jpg);
-  height:150px;
-  width:150px;
-  background-size: 150px 150px;
-  background-repeat: no-repeat;
+	      background-image: url(https://stage.siciliano.photo/wp-content/themes/siciliano_divi_child/img/SicilianoCircle_512.jpg);
+	      height: 150px;
+	      width: 150px;
+	      background-size: 170px 170px;
+	      background-repeat: no-repeat;
+	      border: 10px #fff solid;
+}
      
       }
   </style>

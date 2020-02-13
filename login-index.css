@@ -22,14 +22,15 @@ body {
 
 #login h1 a,
 .login h1 a {
-    animation: rotation 120s 0s linear infinite;
+    /* animation: rotation 120s 0s linear infinite; */
     background-color: #f9f9f966;
     padding: 10px 10px;
     background-position: 50%;
     border-radius: 50%;
 }
 
-@keyframes rotation {
+
+/* @keyframes rotation {
     0% {
         -ms-transform: rotate(0deg)
     }
@@ -48,7 +49,7 @@ body {
     100% {
         transform: rotate(360deg)
     }
-}
+} */
 
 #login h1 {
     background-color: rgba(0, 0, 0, 0);
