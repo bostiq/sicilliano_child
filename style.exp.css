@@ -1,0 +1,220 @@
+@charset "UTF-8";
+/* Theme Name:  Siciliano_Divi_Child
+ * Theme URI:   https://stage.siciliano.photo
+ * Version:     1.0
+ * Description: A child theme of Divi. This is a custom child theme created for our site Siciliano Photo.
+ * Author:      Lorenzo Colen info@indexwebmedia.com
+ * Author URI:  https://stage.siciliano.photo
+ * Template:    Divi
+ * Tags: simple, pink, photo, photography, white, plain, gallery
+ * License: GNU General Public License v2
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * */
+/*- Add any CSS custom code for this child theme below this line -*/
+/** ,
+ * ,
+ * ,
+ * ,
+ * , **/
+/** 
+ * ╦ ╦╔═╗╔═╗╔╦╗╔═╗╦═╗
+ * ╠═╣║╣ ╠═╣ ║║║╣ ╠╦╝
+ * ╩ ╩╚═╝╩ ╩═╩╝╚═╝╩╚═
+ * **/
+.et_pb_section.et_pb_section_0 {
+  padding: 94px 0 57px 0;
+}
+
+/* .home.et_fixed_nav .et_pb_section_0 
+ * *  padding: 57px 0
+ * * */
+.logo_container {
+  margin: 0 0 6% -30px;
+}
+.logo_container::before {
+  content: "Siciliano";
+  transform: translate(50px, 100px);
+}
+.logo_container::after {
+  content: "Photo";
+  transform: translate(-50px, 100px);
+}
+
+.logo_container::after, .logo_container::before {
+  font-size: 2em;
+  padding: 0;
+  display: inline-block;
+  position: relative;
+  opacity: 1;
+  transition: all 200ms ease-in-out 0s;
+}
+
+.et-fixed-header .logo_container {
+  margin: 0 0 0 -30px;
+}
+.et-fixed-header .logo_container::after, .et-fixed-header .logo_container::before {
+  opacity: 0;
+}
+
+@media all and (max-width: 980px) {
+  .logo_container::before {
+    transform: translate(30px, 50px);
+  }
+  .logo_container::after {
+    transform: translate(-20px, 50px);
+  }
+}
+@media all and (max-width: 480px) {
+  .logo_container::before {
+    transform: translate(0, 30px);
+  }
+  .logo_container::after {
+    transform: translate(0px, 30px);
+  }
+}
+/**     
+ * ╦ ╦╔═╗╔╦╗╔═╗  ╔═╗╔═╗╔═╗╔═╗  ╔═╗╔═╗╦═╗╔╦╗╔═╗
+ * ╠═╣║ ║║║║║╣   ╠═╝╠═╣║ ╦║╣   ║  ╠═╣╠╦╝ ║║╚═╗
+ * ╩ ╩╚═╝╩ ╩╚═╝  ╩  ╩ ╩╚═╝╚═╝  ╚═╝╩ ╩╩╚══╩╝╚═╝
+ * **/
+/** ,
+ * ,
+ * ,
+ * , **/
+.et_pb_portfolio_item {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.et_pb_portfolio_item:before {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  content: "";
+  top: 0;
+  left: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #e5e5e5;
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+}
+
+.et_pb_portfolio_item:hover::before {
+  opacity: 1;
+}
+
+.et_pb_portfolio_item h2, .et_pb_portfolio_item p {
+  position: absolute;
+  margin: 0 auto;
+  top: -200%;
+  z-index: 9;
+  transition: all 200ms ease-in-out 0s;
+}
+
+.et_pb_portfolio_item p {
+  top: 200%;
+  transition: all 400ms ease-in-out 0s;
+}
+
+.et_pb_portfolio_item:hover p {
+  top: 30%;
+}
+
+.et_pb_portfolio_item:hover h2 {
+  top: 10%;
+}
+
+/** 
+ * ╔═╗╦═╗╔═╗ ╦╔═╗╔═╗╔╦╗╔═╗  ╦╔╦╗╔═╗╔═╗╔═╗  ╔═╗╦═╗╦╔╦╗
+ * ╠═╝╠╦╝║ ║ ║║╣ ║   ║ ╚═╗  ║║║║╠═╣║ ╦║╣   ║ ╦╠╦╝║ ║║
+ * ╩  ╩╚═╚═╝╚╝╚═╝╚═╝ ╩ ╚═╝  ╩╩ ╩╩ ╩╚═╝╚═╝  ╚═╝╩╚═╩═╩╝
+ * **/
+/** ,
+ * ,
+ * ,
+ * , **/
+.grid-image-gallery {
+  width: 100%;
+  padding-top: 100%;
+}
+
+.grid-image-gallery .et_pb_gallery_items.et_post_gallery {
+  display: grid;
+  grid-template: 1fr 1fr 1fr 1fr/1fr 1fr 1fr 1fr;
+  grid-gap: 4px 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@media all and (max-width: 480px) {
+  .grid-image-gallery .et_pb_gallery_items.et_post_gallery {
+    grid-template: 1fr 1fr 1fr 1fr 1fr 1fr/1fr 1fr;
+  }
+
+  .grid-image-gallery {
+    width: 100%;
+    padding-top: 300%;
+  }
+}
+.grid-image-gallery .et_pb_gallery_item.et_pb_gallery_item {
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden;
+  margin: 0 !important;
+}
+
+/** REMBER TO TAKE THE FOLLOWING OFF TO MAKKE THE TITLES OVERLAY **/
+/** FIX FOR IOS AND SAFARI **/
+.grid-image-gallery .et_pb_gallery_item.et_pb_gallery_item p, .grid-image-gallery .et_pb_gallery_item.et_pb_gallery_item h3 {
+  display: none;
+}
+
+.grid-image-gallery .et_pb_gallery_item.et_pb_gallery_item img {
+  width: 267px;
+  height: 267px;
+  margin: 0 !important;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+@media all and (max-width: 980px) {
+  .grid-image-gallery .et_pb_gallery_item.et_pb_gallery_item img {
+    width: 197px;
+    height: 197px;
+  }
+}
+@media all and (max-width: 767px) {
+  .grid-image-gallery .et_pb_gallery_item.et_pb_gallery_item img {
+    width: 147px;
+    height: 147px;
+  }
+}
+@media all and (max-width: 480px) {
+  .grid-image-gallery .et_pb_gallery_item.et_pb_gallery_item img {
+    width: 197px;
+    height: 197px;
+  }
+}
+.et_pb_gallery_filler {
+  display: none;
+}
+
+/*# sourceMappingURL=style.exp.css.map */
