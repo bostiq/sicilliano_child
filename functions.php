@@ -32,6 +32,7 @@ function my_login_logo() { ?>
      
       }
   </style>
+
 <?php }
 add_action( 'login_enqueue_scripts', 'my_login_logo' );
 
@@ -49,4 +50,35 @@ add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
 
 // END CSS
 
-?>
+// // "PROJECT POST TYPE IN PERMALINKS"
+// register_taxonomy(
+//   'project_category',
+//   'project',
+//   array(
+//       'rewrite' => array( 'slug' => 'projects', 'with_front' => false ),
+//       // your other args...
+//   )
+// );
+
+// register_post_type(
+//   'project',
+//   array(
+//       'rewrite' => array( 'slug' => 'projects/%project_category%', 'with_front' => false ),
+//       'has_archive' => 'shows',
+//       // your other args...
+//   )
+// );
+
+
+// function wpa_sproject_permalinks( $post_link, $post ){
+//   if ( is_object( $post ) && $post->post_type == 'projects' ){
+//       $terms = wp_get_object_terms( $post->ID, 'project_category' );
+//       if( $terms ){
+//           return str_replace( '%projects_category%' , $terms[0]->slug , $post_link );
+//       }
+//   }
+//   return $post_link;
+// }
+// add_filter( 'post_type_link', 'wpa_projects_permalinks', 1, 2 );
+
+// ?>
