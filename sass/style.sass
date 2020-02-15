@@ -50,6 +50,7 @@
   -moz-transition: all 0.3s
   transition: all 0.3s
   -webkit-transform: translate3d(0, 0, 0)
+  transform: translate3d(0, 0, 0)
   -webkit-backface-visibility: hidden
   -moz-backface-visibility: hidden
   backface-visibility: hidden
@@ -86,32 +87,74 @@
   ,
   ,
   , **/
-.et_pb_gallery.et_pb_gallery_grid 
-  max-height: 1080px
-  max-width: 1080px
-  height: auto
+// .et_pb_gallery.et_pb_gallery_grid 
+//   max-height: 1080px
+//   max-width: 1080px
+//   height: auto
+//   width: 100%                                               
+                                                               
+.grid-image-gallery
   width: 100%
-
-.et_pb_gallery_items.et_post_gallery
+  padding-top: 100%
+.grid-image-gallery .et_pb_gallery_items.et_post_gallery
   display: grid
-  grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr
-  height: 1080px
+  grid-template: 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr
   grid-gap: 4px 4px
-  width: 100%
+  position: absolute
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+@media all and (max-width: 480px)
+  .grid-image-gallery .et_pb_gallery_items.et_post_gallery
+    grid-template: 1fr 1fr 1fr 1fr 1fr 1fr / 1fr 1fr
+  .grid-image-gallery
+    width: 100%
+    padding-top: 300%  
 
-
-.et_pb_gallery_item.et_pb_gallery_item  
-  width: 359px !important
-  height: 359px !important
+.grid-image-gallery .et_pb_gallery_item.et_pb_gallery_item  
+  width: 100% !important
+  height: 100% !important
   overflow: hidden
   margin: 0 !important
 
-.et_pb_gallery_item.et_pb_gallery_item  img 
-  width: 359px
-  height: 359px
+/** REMBER TO TAKE THE FOLLOWING OFF TO MAKKE THE TITLES OVERLAY **/
+/** FIX FOR IOS AND SAFARI **/
+.grid-image-gallery .et_pb_gallery_item.et_pb_gallery_item p, .grid-image-gallery .et_pb_gallery_item.et_pb_gallery_item h3
+  display: none
+
+
+  // @media all and (max-width: 980px)
+  // .grid-image-gallery .et_pb_gallery_item.et_pb_gallery_item  
+  //   width: 267px !important
+  //   height: 267px !important
+// .grid-image-gallery .et_pb_gallery_item
+//   width: 100%
+//   padding-top: 100%
+
+.grid-image-gallery .et_pb_gallery_item.et_pb_gallery_item  img 
+  // position: absolute
+  // top: 0
+  // left: 0
+  // bottom: 0
+  // right: 0
+  width: 267px
+  height: 267px
   margin: 0 !important
   -o-object-fit: cover
   object-fit: cover
+@media all and (max-width: 980px)
+  .grid-image-gallery .et_pb_gallery_item.et_pb_gallery_item img
+    width: 197px
+    height: 197px
+@media all and (max-width: 767px)
+  .grid-image-gallery .et_pb_gallery_item.et_pb_gallery_item img
+    width: 147px
+    height: 147px
+@media all and (max-width: 480px)
+  .grid-image-gallery .et_pb_gallery_item.et_pb_gallery_item img
+    width: 197px
+    height: 197px
 
 
 .et_pb_gallery_filler 
