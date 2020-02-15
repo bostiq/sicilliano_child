@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Theme Name:  Siciliano_Divi_Child
  * Theme URI:   https://stage.siciliano.photo
  * Version:     1.0
@@ -10,5 +11,118 @@
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * */
 /*- Add any CSS custom code for this child theme below this line -*/
+/** ,
+ * ,
+ * ,
+ * ,
+ * , **/
+/**     
+ * ╦ ╦╔═╗╔╦╗╔═╗  ╔═╗╔═╗╔═╗╔═╗  ╔═╗╔═╗╦═╗╔╦╗╔═╗
+ * ╠═╣║ ║║║║║╣   ╠═╝╠═╣║ ╦║╣   ║  ╠═╣╠╦╝ ║║╚═╗
+ * ╩ ╩╚═╝╩ ╩╚═╝  ╩  ╩ ╩╚═╝╚═╝  ╚═╝╩ ╩╩╚══╩╝╚═╝
+ * **/
+/** ,
+ * ,
+ * ,
+ * , **/
+.et_pb_portfolio_item {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.et_pb_portfolio_item:before {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  content: "";
+  top: 0;
+  left: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #e5e5e5;
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+}
+
+.et_pb_portfolio_item:hover::before {
+  opacity: 1;
+}
+
+.et_pb_portfolio_item h2, .et_pb_portfolio_item p {
+  position: absolute;
+  margin: 0 auto;
+  top: -200%;
+  z-index: 9;
+  transition: all 200ms ease-in-out 0s;
+}
+
+.et_pb_portfolio_item p {
+  top: 200%;
+  transition: all 400ms ease-in-out 0s;
+}
+
+.et_pb_portfolio_item:hover p {
+  top: 30%;
+}
+
+.et_pb_portfolio_item:hover h2 {
+  top: 10%;
+}
+
+/** 
+ * ╔═╗╦═╗╔═╗ ╦╔═╗╔═╗╔╦╗╔═╗  ╦╔╦╗╔═╗╔═╗╔═╗  ╔═╗╦═╗╦╔╦╗
+ * ╠═╝╠╦╝║ ║ ║║╣ ║   ║ ╚═╗  ║║║║╠═╣║ ╦║╣   ║ ╦╠╦╝║ ║║
+ * ╩  ╩╚═╚═╝╚╝╚═╝╚═╝ ╩ ╚═╝  ╩╩ ╩╩ ╩╚═╝╚═╝  ╚═╝╩╚═╩═╩╝
+ * **/
+/** ,
+ * ,
+ * ,
+ * , **/
+.et_pb_gallery.et_pb_gallery_grid {
+  max-height: 1080px;
+  max-width: 1080px;
+  height: auto;
+  width: 100%;
+}
+
+.et_pb_gallery_items.et_post_gallery {
+  display: grid;
+  grid-template: 1fr 1fr 1fr/1fr 1fr 1fr;
+  height: 1080px;
+  grid-gap: 4px 4px;
+  width: 100%;
+}
+
+.et_pb_gallery_item.et_pb_gallery_item {
+  width: 359px !important;
+  height: 359px !important;
+  overflow: hidden;
+  margin: 0 !important;
+}
+
+.et_pb_gallery_item.et_pb_gallery_item img {
+  width: 359px;
+  height: 359px;
+  margin: 0 !important;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.et_pb_gallery_filler {
+  display: none;
+}
 
 /*# sourceMappingURL=style.css.map */
