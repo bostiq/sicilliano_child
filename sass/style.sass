@@ -16,7 +16,7 @@
   ,
   ,
   , **/
-/** 
+/* 
   ╦ ╦╔═╗╔═╗╔╦╗╔═╗╦═╗
   ╠═╣║╣ ╠═╣ ║║║╣ ╠╦╝
   ╩ ╩╚═╝╩ ╩═╩╝╚═╝╩╚═
@@ -144,69 +144,80 @@
 //   height: auto
 //   width: 100%                                               
                                                                
-.grid-image-gallery
-  width: 100%
+.grid-image-gallery 
+  width: 100% 
   padding-top: 100%
-.grid-image-gallery .et_pb_gallery_items.et_post_gallery
-  display: grid
-  grid-template: 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr
-  grid-gap: 4px 4px
-  position: absolute
-  top: 0
-  left: 0
-  bottom: 0
-  right: 0
-@media all and (max-width: 480px)
-  .grid-image-gallery .et_pb_gallery_items.et_post_gallery
-    grid-template: 1fr 1fr 1fr 1fr 1fr 1fr / 1fr 1fr
-  .grid-image-gallery
-    width: 100%
-    padding-top: 300%  
-
-.grid-image-gallery .et_pb_gallery_item.et_pb_gallery_item  
-  width: 100% !important
-  height: 100% !important
   overflow: hidden
-  margin: 0 !important
 
-/** REMBER TO TAKE THE FOLLOWING OFF TO MAKKE THE TITLES OVERLAY **/
-/** FIX FOR IOS AND SAFARI **/
-.grid-image-gallery .et_pb_gallery_item.et_pb_gallery_item p, .grid-image-gallery .et_pb_gallery_item.et_pb_gallery_item h3
-  display: none
+.et_pb_gallery_grid .et_pb_gallery_items 
+  display: grid 
+  grid-template: 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 
+  grid-gap: 6px 6px 
+  position: absolute 
+  top: 0 
+  left: 0 
+  bottom: 0 
+  right: 0 
 
 
-  // @media all and (max-width: 980px)
-  // .grid-image-gallery .et_pb_gallery_item.et_pb_gallery_item  
-  //   width: 267px !important
-  //   height: 267px !important
-// .grid-image-gallery .et_pb_gallery_item
-//   width: 100%
-//   padding-top: 100%
+.et_pb_gutters3 .et_pb_column_4_4 .et_pb_grid_item 
+  width: 100% 
+  height: 100% 
+  overflow: hidden 
+  margin: 0
 
-.grid-image-gallery .et_pb_gallery_item.et_pb_gallery_item  img 
-  // position: absolute
-  // top: 0
-  // left: 0
-  // bottom: 0
-  // right: 0
-  width: 267px
-  height: 267px
-  margin: 0 !important
-  -o-object-fit: cover
+
+.et_pb_gallery_grid .et_pb_gallery_item img, .et_pb_portfolio_grid .et_pb_portfolio_item img, .et_pb_filterable_portfolio_grid .et_pb_portfolio_item img 
+  width: 267px 
+  height: 267px 
   object-fit: cover
+
 @media all and (max-width: 980px)
-  .grid-image-gallery .et_pb_gallery_item.et_pb_gallery_item img
-    width: 197px
-    height: 197px
-@media all and (max-width: 767px)
+  grid-image-gallery .et_pb_gallery_item.et_pb_gallery_item img
+    width: 267px !important
+    height: 267px !important
+  .et_pb_gutters3 .et_pb_column_4_4 .et_pb_grid_item 
+    width: 100% 
+    height: 100% 
+    overflow: hidden 
+    margin: 0
+
+@media all and (max-width: 768px)
+  .et_pb_section.et_pb_section_0
+    padding: 57px 0 57px 0
   .grid-image-gallery .et_pb_gallery_item.et_pb_gallery_item img
     width: 147px
     height: 147px
-@media all and (max-width: 480px)
-  .grid-image-gallery .et_pb_gallery_item.et_pb_gallery_item img
-    width: 197px
-    height: 197px
+  .et_pb_gutters3 .et_pb_column_4_4 .et_pb_grid_item 
+    width: 100% 
+    height: 100% 
+    overflow: hidden 
+    margin: 0
 
+@media all and (max-width: 480px)
+  .grid-image-gallery .et_pb_gallery_items.et_post_gallery
+    grid-template: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr / 1fr 1fr
+  .grid-image-gallery
+    width: 100%
+    padding-top: 400%
+  .et_pb_gutters3 .et_pb_column_4_4 .et_pb_grid_item 
+    width: 100% 
+    height: 100% 
+    overflow: hidden 
+    margin: 0
+  .grid-image-gallery .et_pb_gallery_item.et_pb_gallery_item img
+    width: 147px
+    height: 147px
+
+
+/** REMBER TO TAKE THE FOLLOWING OFF TO MAKKE THE TITLES OVERLAY **/
+/** FIX FOR IOS AND SAFARI **/
+
+.grid-image-gallery .et_pb_gallery_item.et_pb_gallery_item p, .grid-image-gallery .et_pb_gallery_item.et_pb_gallery_item h3
+  display: none
+
+/** ----------------------- **/
 
 .et_pb_gallery_filler 
   display: none
+  
