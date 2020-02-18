@@ -136,58 +136,63 @@ span.logo_helper
   ,
   ,
   , **/
-.et_pb_portfolio_item 
-  display: flex !important
-  align-items: center
-  justify-content: center
-  overflow: hidden
-
-.et_pb_portfolio_item:before
-  display: block
+/** 
+  .et_pb_portfolio_item,
+  .et_pb_grid_item 
+    display: flex !important
+    align-items: center
+    justify-content: center
+    overflow: hidden
+ **/
+.et_pb_grid_item::before, .et_pb_portfolio_item::before
+  content: ''
   position: absolute
   z-index: 1
-  content: ''
   top: 0
   left: 0
-  -webkit-box-sizing: border-box
-  -moz-box-sizing: border-box
-  box-sizing: border-box
+  display: block
   width: 100%
   height: 100%
-  border: 1px solid #e5e5e5
-  opacity: 0
   background: rgba(255, 255, 255, 0.9)
+  opacity: 0
+  pointer-events: none
   -webkit-transition: all 0.3s
   -moz-transition: all 0.3s
   transition: all 0.3s
-  -webkit-transform: translate3d(0, 0, 0)
-  transform: translate3d(0, 0, 0)
+  border: 1px solid #E5E5E5
+  box-sizing: border-box
+  -moz-box-sizing: border-box
+  -webkit-box-sizing: border-box
   -webkit-backface-visibility: hidden
-  -moz-backface-visibility: hidden
   backface-visibility: hidden
-  -o-backface-visibility: hidden
+  -webkit-transform: translate3d(0, 0, 0)
 
-.et_pb_portfolio_item:hover::before
+.et_pb_portfolio_item:hover::before,
+.et_pb_grid_item:hover::before
   opacity: 1
 
 
-.et_pb_portfolio_item h2, .et_pb_portfolio_item p
+.et_pb_portfolio_item h2, .et_pb_portfolio_item p,
+.et_pb_grid_item h3, .et_pb_grid_item p
   position: absolute
   margin: 0 auto
   top: -200%
   z-index: 9
   transition: all 200ms ease-in-out 0s
-    
+  width: 100%
+  text-align: center
 
-.et_pb_portfolio_item p 
+.et_pb_portfolio_item p, .et_pb_grid_item p
   top: 200%
   transition: all 400ms ease-in-out 0s
 
-.et_pb_portfolio_item:hover p 
-  top:30%  
+.et_pb_portfolio_item:hover h2, .et_pb_grid_item:hover h3
+  top: 20%
 
-.et_pb_portfolio_item:hover h2 
-  top: 10%
+.et_pb_portfolio_item:hover p, .et_pb_grid_item:hover p
+  top:40%  
+
+
 
 /** 
   ╔═╗╦═╗╦╔╦╗  ╔═╗╔═╗╔╦╗╔╦╗╔═╗╔╗╔╔═╗
@@ -195,11 +200,14 @@ span.logo_helper
   ╚═╝╩╚═╩═╩╝  ╚═╝╚═╝╩ ╩╩ ╩╚═╝╝╚╝╚═╝
  **/
 
+
 .et_pb_gallery.portfolioX,
 .et_pb_gallery.grid-image-gallery,
-.et_pb_portfolio.portfolioX
+.et_pb_portfolio.portfolioX,
+.et_pb_portfolio_grid.portfolioX
   width: 100%
   padding-top: 100%
+  max-height: 1080px
 
 .et_pb_gutters3 .et_pb_column_4_4 .et_pb_grid_item 
   width: 100% 
@@ -212,7 +220,9 @@ span.logo_helper
   ╩  ╩╚═╚═╝╚╝╚═╝╚═╝ ╩ ╚═╝  ╩╩ ╩╩ ╩╚═╝╚═╝  ╚═╝╩╚═╩═╩╝
  **/
 
-.portfolioX .et_pb_gallery_items, .portfolioX .et_pb_ajax_pagination_container
+.portfolioX .et_pb_gallery_items,
+.portfolioX .et_pb_ajax_pagination_container,
+.portfolioX .et_pb_portfolio_grid_items
   display: grid
   grid-template: 1fr 1fr 1fr/1fr 1fr 1fr
   grid-gap: 6px 6px
@@ -221,12 +231,13 @@ span.logo_helper
   left: 0
   bottom: 0
   right: 0
- 
 
-.et_pb_gallery_grid.portfolioX .et_pb_gallery_item img,
-.et_pb_portfolio_grid.portfolioX .et_pb_portfolio_item img,
-.et_pb_portfolio.portfolioX .et_pb_portfolio_item img,
-.et_pb_filterable_portfolio_grid.portfolioX .et_pb_portfolio_item img 
+// .et_pb_filterable_portfolio_grid.portfolioX .et_pb_portfolio_item img 
+.portfolioX .et_pb_gallery_item img,
+.portfolioX .et_pb_portfolio_item img,
+.portfolioX .et_pb_grid_item img,
+.portfolioX .et_pb_portfolio_item img,
+.portfolioX.et_pb_portfolio_grid .et_pb_portfolio_item img
   width: 356px
   height: 356px
   object-fit: cover
@@ -247,7 +258,9 @@ span.logo_helper
   bottom: 0 
   right: 0 
 
-.et_pb_gallery_grid.et_pb_gallery_grid.grid-image-gallery .et_pb_gallery_item img, .et_pb_portfolio_grid .et_pb_portfolio_item img, .et_pb_filterable_portfolio_grid .et_pb_portfolio_item img 
+.grid-image-gallery .et_pb_gallery_item img,
+.et_pb_portfolio_grid .et_pb_portfolio_item img,
+.et_pb_filterable_portfolio_grid .et_pb_portfolio_item img 
   width: 267px 
   height: 267px 
   object-fit: cover
@@ -279,7 +292,16 @@ span.logo_helper
 
 .grid-image-gallery .et_pb_gallery_item.et_pb_gallery_item p, .grid-image-gallery .et_pb_gallery_item.et_pb_gallery_item h3
   display: none
-
+/**                                                                                           
+    ╔═╗╔═╗╔═╗╦╔╗╔╔═╗╔╦╗╦╔═╗╔╗╔
+    ╠═╝╠═╣║ ╦║║║║╠═╣ ║ ║║ ║║║║
+    ╩  ╩ ╩╚═╝╩╝╚╝╩ ╩ ╩ ╩╚═╝╝╚╝
+ **/                              
+.et_pb_gallery .et_pb_gallery_pagination,
+.et_pb_filterable_portfolio .et_pb_portofolio_pagination
+  transform: translateY(100px)
+ 
+                              
 /** ----------------------- **/
 
 .et_pb_gallery_filler 
