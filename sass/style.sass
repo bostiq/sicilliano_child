@@ -21,52 +21,112 @@
   ╠═╣║╣ ╠═╣ ║║║╣ ╠╦╝
   ╩ ╩╚═╝╩ ╩═╩╝╚═╝╩╚═
   **/
-.et_pb_section.et_pb_section_0
-  padding: 94px 0 57px 0
 
-/* .home.et_fixed_nav .et_pb_section_0 
- *  padding: 57px 0
- *
+span.logo_helper
+  display: none !important
+
 .logo_container
-  margin: 0 0 6% -30px
+  display: block
+  margin-bottom: 20px
 
-  &::before 
-    content:"Siciliano"
-    transform: translate(50px,100px)
+  .biz-name
+    display: block
+    position: relative
 
-  &::after 
-    content:"Photo"
-    transform: translate(-50px,100px)
+  a
+    display: block
+    width: 100%
+    height: auto
+    position: relative !important
 
-.logo_container::after, .logo_container::before 
-  font-size: 2em
+  h1
+    display: block
+    width: 100%
+    height: auto
+    position: relative !important
+
+    .photo
+      transition: all 400ms ease-in-out 500ms
+
+    padding: 1% 0
+    height: inherit
+    font-family: 'Avenir Next', sans-serif
+    font-size: 2.4rem
+    font-weight: 600
+    letter-spacing: 0.25rem
+    transform: translateY(-40%)
+    transition: all 200ms ease-in-out 300ms
+
+.et-fixed-header .logo_container h1,
+.et-fixed-header .logo_container h1 .photo
+  font-size: 0rem
   padding: 0
-  display: inline-block
-  position: relative
-  opacity: 1
   transition: all 200ms ease-in-out 0s
+
+.logo_container
+  span
+    display: block
+    text-transform: uppercase
+    color: rgba(0, 0, 0, 0.6)
+
+  a
+    /* width: auto */
+    height: 100%
+    margin: 0
+    padding: 1%
+
+.et-fixed-header .logo_container a img
+  height: 100%
+
+.logo_container a img
+  height: 70%
+
+.et_header_style_centered #logo
+  max-height: 100%
+
+.logo_container .photo
+  font-size: 2rem
+  padding: 1% 0
+
+/* actual menu margin from biz name
+
+.et_header_style_centered #main-header
+  div#et-top-navigation
+    margin-top: 8%
+
+  &.et-fixed-header div#et-top-navigation
+    margin-top: 0
+
+@media all and (max-width: 980px) 
+  .et_header_style_centered #logo 
+    max-height: 60px !important
+    max-width: 60px !important
+  
+  .et_header_style_centered .logo_container a 
+    padding-bottom: 40px
+  
+  .et_header_style_centered #main-header div#et-top-navigation 
+    margin-top: 16%
+/** 
+  ╔╗╔╔═╗╦  ╦
+  ║║║╠═╣╚╗╔╝
+  ╝╚╝╩ ╩ ╚╝ 
+ **/
+.nav li ul  
+  position: absolute 
+  padding: 10px 0 
+  left: -50% 
  
-.et-fixed-header .logo_container
-  &::after, &::before
-    opacity: 0
 
-  margin: 0 0 0 -30px
-
-@media all and (max-width: 980px)
-  .logo_container
-    &::before
-      transform: translate(30px, 50px)
-
-    &::after
-      transform: translate(-20px, 50px)
-
-@media all and (max-width: 480px)
-  .logo_container
-    &::before
-      transform: translate(0, 30px)
-
-    &::after
-      transform: translate(0px, 30px)   
+#top-menu li li  
+  padding: 0 0px !important 
+  margin: 0 auto 
+  text-align: center 
+  width: 100% 
+  a  
+    padding: 6px 20px 
+    width: 100%  
+ 
 /**     
   ╦ ╦╔═╗╔╦╗╔═╗  ╔═╗╔═╗╔═╗╔═╗  ╔═╗╔═╗╦═╗╔╦╗╔═╗
   ╠═╣║ ║║║║║╣   ╠═╝╠═╣║ ╦║╣   ║  ╠═╣╠╦╝ ║║╚═╗
@@ -130,26 +190,54 @@
   top: 10%
 
 /** 
+  ╔═╗╦═╗╦╔╦╗  ╔═╗╔═╗╔╦╗╔╦╗╔═╗╔╗╔╔═╗
+  ║ ╦╠╦╝║ ║║  ║  ║ ║║║║║║║║ ║║║║╚═╗
+  ╚═╝╩╚═╩═╩╝  ╚═╝╚═╝╩ ╩╩ ╩╚═╝╝╚╝╚═╝
+ **/
+
+.et_pb_gallery.portfolioX,
+.et_pb_gallery.grid-image-gallery,
+.et_pb_portfolio.portfolioX
+  width: 100%
+  padding-top: 100%
+
+.et_pb_gutters3 .et_pb_column_4_4 .et_pb_grid_item 
+  width: 100% 
+  height: 100% 
+  overflow: hidden 
+  margin: 0
+/** 
   ╔═╗╦═╗╔═╗ ╦╔═╗╔═╗╔╦╗╔═╗  ╦╔╦╗╔═╗╔═╗╔═╗  ╔═╗╦═╗╦╔╦╗
   ╠═╝╠╦╝║ ║ ║║╣ ║   ║ ╚═╗  ║║║║╠═╣║ ╦║╣   ║ ╦╠╦╝║ ║║
   ╩  ╩╚═╚═╝╚╝╚═╝╚═╝ ╩ ╚═╝  ╩╩ ╩╩ ╩╚═╝╚═╝  ╚═╝╩╚═╩═╩╝
  **/
-/** ,
-  ,
-  ,
-  , **/
-// .et_pb_gallery.et_pb_gallery_grid 
-//   max-height: 1080px
-//   max-width: 1080px
-//   height: auto
-//   width: 100%                                               
-                                                               
-.grid-image-gallery 
-  width: 100% 
-  padding-top: 100%
-  overflow: hidden
 
-.et_pb_gallery_grid .et_pb_gallery_items 
+.portfolioX .et_pb_gallery_items, .portfolioX .et_pb_ajax_pagination_container
+  display: grid
+  grid-template: 1fr 1fr 1fr/1fr 1fr 1fr
+  grid-gap: 6px 6px
+  position: absolute
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+ 
+
+.et_pb_gallery_grid.portfolioX .et_pb_gallery_item img,
+.et_pb_portfolio_grid.portfolioX .et_pb_portfolio_item img,
+.et_pb_portfolio.portfolioX .et_pb_portfolio_item img,
+.et_pb_filterable_portfolio_grid.portfolioX .et_pb_portfolio_item img 
+  width: 356px
+  height: 356px
+  object-fit: cover
+ 
+/** 
+  ╦╔╦╗╔═╗╔═╗╔═╗╔═╗  ╔═╗╔═╗╦  ╦  ╔═╗╦═╗╦ ╦  ╔═╗╦═╗╦╔╦╗  ╔═╗╔═╗╦ ╦╦═╗  ═╗ ╦  ╔═╗╔═╗╦ ╦╦═╗
+  ║║║║╠═╣║ ╦║╣ ╚═╗  ║ ╦╠═╣║  ║  ║╣ ╠╦╝╚╦╝  ║ ╦╠╦╝║ ║║  ╠╣ ║ ║║ ║╠╦╝  ╔╩╦╝  ╠╣ ║ ║║ ║╠╦╝
+  ╩╩ ╩╩ ╩╚═╝╚═╝╚═╝  ╚═╝╩ ╩╩═╝╩═╝╚═╝╩╚═ ╩   ╚═╝╩╚═╩═╩╝  ╚  ╚═╝╚═╝╩╚═  ╩ ╚═  ╚  ╚═╝╚═╝╩╚═
+ **/    
+
+.et_pb_gallery_grid.grid-image-gallery .et_pb_gallery_items 
   display: grid 
   grid-template: 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 
   grid-gap: 6px 6px 
@@ -159,28 +247,15 @@
   bottom: 0 
   right: 0 
 
-
-.et_pb_gutters3 .et_pb_column_4_4 .et_pb_grid_item 
-  width: 100% 
-  height: 100% 
-  overflow: hidden 
-  margin: 0
-
-
-.et_pb_gallery_grid .et_pb_gallery_item img, .et_pb_portfolio_grid .et_pb_portfolio_item img, .et_pb_filterable_portfolio_grid .et_pb_portfolio_item img 
+.et_pb_gallery_grid.et_pb_gallery_grid.grid-image-gallery .et_pb_gallery_item img, .et_pb_portfolio_grid .et_pb_portfolio_item img, .et_pb_filterable_portfolio_grid .et_pb_portfolio_item img 
   width: 267px 
   height: 267px 
   object-fit: cover
 
 @media all and (max-width: 980px)
-  grid-image-gallery .et_pb_gallery_item.et_pb_gallery_item img
+  .grid-image-gallery .et_pb_gallery_item.et_pb_gallery_item img
     width: 267px !important
     height: 267px !important
-  .et_pb_gutters3 .et_pb_column_4_4 .et_pb_grid_item 
-    width: 100% 
-    height: 100% 
-    overflow: hidden 
-    margin: 0
 
 @media all and (max-width: 768px)
   .et_pb_section.et_pb_section_0
@@ -188,28 +263,17 @@
   .grid-image-gallery .et_pb_gallery_item.et_pb_gallery_item img
     width: 147px
     height: 147px
-  .et_pb_gutters3 .et_pb_column_4_4 .et_pb_grid_item 
-    width: 100% 
-    height: 100% 
-    overflow: hidden 
-    margin: 0
-
+  
 @media all and (max-width: 480px)
   .grid-image-gallery .et_pb_gallery_items.et_post_gallery
     grid-template: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr / 1fr 1fr
   .grid-image-gallery
     width: 100%
     padding-top: 400%
-  .et_pb_gutters3 .et_pb_column_4_4 .et_pb_grid_item 
-    width: 100% 
-    height: 100% 
-    overflow: hidden 
-    margin: 0
+  
   .grid-image-gallery .et_pb_gallery_item.et_pb_gallery_item img
     width: 147px
     height: 147px
-
-
 /** REMBER TO TAKE THE FOLLOWING OFF TO MAKKE THE TITLES OVERLAY **/
 /** FIX FOR IOS AND SAFARI **/
 
@@ -220,4 +284,14 @@
 
 .et_pb_gallery_filler 
   display: none
-  
+#main-footer
+  padding: 8%
+// -------------------------------
+// CODE SNIPPETS - "JUST IN CASE"
+// -------------------------------
+
+// .et_pb_gutters3 .et_pb_column_4_4 .et_pb_grid_item 
+  //   width: 100% 
+  //   height: 100% 
+  //   overflow: hidden 
+  //   margin: 0
