@@ -1,3 +1,11 @@
+// sass-lint:disable no-css-comments
+// sass-lint:disable border-zero
+// sass-lint:disable class-name-format
+// sass-lint:disable property-sort-order
+// sass-lint:disable no-ids
+// sass-lint:disable force-element-nesting
+// sass-lint:disable force-pseudo-nesting
+
 /*
   Theme Name:  Siciliano_Divi_Child
   Theme URI:   https://stage.siciliano.photo
@@ -16,6 +24,12 @@
   ,
   ,
   , **/
+
+$overlay: rgba(255, 255, 255, .9)
+$grey-font: rgba(0, 0, 0, .6)
+$trans: all 200ms ease-in-out 0s
+$trans-long: all 400ms ease-in-out 0ms
+
 /* 
   ╦ ╦╔═╗╔═╗╔╦╗╔═╗╦═╗
   ╠═╣║╣ ╠═╣ ║║║╣ ╠╦╝
@@ -29,6 +43,11 @@
   display: block
   margin-bottom: 20px
 
+  span
+    display: block
+    text-transform: uppercase
+    color: $grey-font
+
   .biz-name
     display: block
     position: relative
@@ -36,8 +55,19 @@
   a
     display: block
     position: relative !important
-    height: auto
     width: 100%
+    height: 100%
+    margin: 0
+    padding: 1%
+    // height: auto
+    // width: auto
+
+    img
+      height: 70%
+
+  .photo
+    font-size: 2rem
+    padding: 1% 0
 
   h1
     display: block
@@ -49,44 +79,28 @@
     font-family: 'Avenir Next', sans-serif
     font-size: 2.4rem
     font-weight: 600
-    letter-spacing: 0.25rem
+    letter-spacing: .25rem
     transform: translateY(-40%)
-    transition: all 200ms ease-in-out 300ms
+    transition: font-size, padding 200ms ease-in-out 300ms
 
     .photo
-      transition: all 400ms ease-in-out 500ms
+      transition: font-size, padding 400ms ease-in-out 500ms
+
+/*!   CHECK !! */
 
 .et-fixed-header
-  .logo_container h1, .logo_container h1 .photo
-    font-size: 0
-    padding: 0
-    transition: all 200ms ease-in-out 0s
+  .logo_container
+    h1,
+    .photo
+      font-size: 0
+      padding: 0
+      transition: $trans
 
-.logo_container
-  span
-    display: block
-    text-transform: uppercase
-    color: rgba(0, 0, 0, 0.6)
-
-  a
-    /* width: auto */
-    height: 100%
-    margin: 0
-    padding: 1%
-
-.et-fixed-header
-  .logo_container a img
-    height: 100%
-
-.logo_container a img
-  height: 70%
+    a img
+      height: 100%
 
 .et_header_style_centered #logo
   max-height: 100%
-
-.logo_container .photo
-  font-size: 2rem
-  padding: 1% 0
 
 /* actual menu margin from biz name
 
@@ -99,29 +113,36 @@
 
 @media all and (max-width: 980px)
   .et_header_style_centered #logo
-    max-height: 60px !important
-    max-width: 60px !important
+    max-height: 60px // /* !important */
+    max-width: 60px // /* !important */
 
-  .et_header_style_centered .logo_container a
-    padding-bottom: 40px
+  .et_header_style_centered
+    .logo_container
+      a
+        padding-bottom: 40px
 
-  .et_header_style_centered #main-header #et-top-navigation
-    margin-top: 16%
+    #main-header
+      #et-top-navigation
+        margin-top: 16%
+
 /** 
   ╔╗╔╔═╗╦  ╦
   ║║║╠═╣╚╗╔╝
   ╝╚╝╩ ╩ ╚╝ 
  **/
+
 .nav li ul
   position: absolute
   padding: 10px 0
   left: -50%
 
-#top-menu li li
-  padding: 0 0px !important
-  margin: 0 auto
-  text-align: center
-  width: 100%
+#top-menu
+  li
+    li
+      padding: 0 !important
+      margin: 0 auto
+      text-align: center
+      width: 100%
 
   a
     padding: 6px 20px
@@ -163,7 +184,8 @@
 //   backface-visibility: hidden
 //   -webkit-transform: translate3d(0, 0, 0)
 
-.et_pb_grid_item, .et_pb_portfolio_item
+.et_pb_grid_item,
+.et_pb_portfolio_item
   .et_overlay::before
     content: ''
     position: absolute
@@ -172,47 +194,52 @@
     bottom: 0
     left: 0
     opacity: 0
-    background-color: rgba(255,255,255,.9)
+    background-color: $overlay
     transition: opacity 400ms ease-in-out 0s
     box-sizing:  border-box
-
-.et_pb_grid_item:hover, .et_pb_portfolio_item:hover
-  .et_overlay::before
-    opacity: 1
-    top: 0 !important
 
 // .et_pb_portfolio_item:hover::before .et_overlay,
 // .et_pb_grid_item:hover::before .et_overlay
 //   opacity: 1
 
-.et_pb_portfolio_item h2, .et_pb_portfolio_item p,
-.et_pb_grid_item h3, .et_pb_grid_item p
+.et_pb_portfolio_item h2,
+.et_pb_portfolio_item p,
+.et_pb_grid_item h3,
+.et_pb_grid_item p
   position: absolute
   margin: 0 auto
   display: block
   top: -200%
   z-index: 9
-  transition: all 400ms ease-in-out 0s
+  transition: top 400ms ease-in-out 0s
   width: 100%
   text-align: center
   overflow: hidden
 
-.et_pb_portfolio_item p, .et_pb_grid_item p
-  top: 200%
-  transition: all 400ms ease-in-out 0s
+.et_pb_portfolio_item,
+.et_pb_grid_item
+  p
+    top: 200%
+    transition: top 400ms ease-in-out 0s
 
-.et_pb_portfolio_item:hover h2, .et_pb_grid_item:hover h3
+.et_pb_portfolio_item:hover h2,
+.et_pb_grid_item:hover h3
   top: 20%
 
-.et_pb_portfolio_item:hover p, .et_pb_grid_item:hover p
-  top: 40%
+.et_pb_portfolio_item:hover,
+.et_pb_grid_item:hover
+  p
+    top: 40%
 
 @media all and(max-width: 480px)
-  .et_pb_portfolio_item:hover h2, .et_pb_grid_item:hover h3
+  .et_pb_portfolio_item:hover h2,
+  .et_pb_grid_item:hover h3
     top: -57%
 
-  .et_pb_portfolio_item:hover p, .et_pb_grid_item:hover p
-    top: -106%
+  .et_pb_portfolio_item:hover,
+  .et_pb_grid_item:hover
+    p
+      top: -106%
 
 /** 
   ╔═╗╦═╗╦╔╦╗  ╔═╗╔═╗╔╦╗╔╦╗╔═╗╔╗╔╔═╗
@@ -229,12 +256,16 @@
   max-height: 1080px
 
 // .et_pb_gutters3 .et_pb_column_4_4 .et_pb_grid_item
+
 .et_pb_gutters3 .et_pb_column_4_4
-  .portfolioX .et_pb_grid_item, .imgGallX .et_pb_grid_item
-    width: 100%
-    height: 100%
-    overflow: hidden
-    margin: 0
+  .portfolioX,
+  .imgGallX
+    .et_pb_grid_item
+      width: 100%
+      height: 100%
+      overflow: hidden
+      margin: 0
+
 /** 
   ╔═╗╦═╗╔═╗ ╦╔═╗╔═╗╔╦╗╔═╗  ╦╔╦╗╔═╗╔═╗╔═╗  ╔═╗╦═╗╦╔╦╗
   ╠═╝╠╦╝║ ║ ║║╣ ║   ║ ╚═╗  ║║║║╠═╣║ ╦║╣   ║ ╦╠╦╝║ ║║
@@ -249,7 +280,7 @@
   .et_pb_ajax_pagination_container,
   .et_pb_portfolio_grid_items
     display: grid
-    grid-template: 1fr 1fr 1fr/1fr 1fr 1fr
+    grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr
     grid-gap: 6px 6px
     position: absolute
     top: 0
@@ -257,15 +288,26 @@
     bottom: 0
     right: 0
 
-// .et_pb_filterable_portfolio_grid.portfolioX .et_pb_portfolio_item img 
-.portfolioX
-  .et_pb_gallery_item img,
-  .et_pb_portfolio_item img,
-  .et_pb_grid_item img,
-  .et_pb_portfolio_item img
-    width: 356px
-    height: 356px
-    object-fit: cover
+  .et_pb_portfolio_item,
+  .et_pb_grid_item,
+  .et_pb_portfolio_item
+    img
+      width: 356px
+      height: 356px
+      object-fit: cover
+
+// .et_pb_filterable_portfolio_grid.portfolioX .et_pb_portfolio_item img
+// /*!   CHECK!! */
+
+// .portfolioX
+//   .et_pb_gallery_item,
+//   .et_pb_portfolio_item,
+//   .et_pb_grid_item,
+//   .et_pb_portfolio_item
+//     img
+//       width: 356px
+//       height: 356px
+//       object-fit: cover
 
 /** 
   ╦╔╦╗╔═╗╔═╗╔═╗╔═╗  ╔═╗╔═╗╦  ╦  ╔═╗╦═╗╦ ╦  ╔═╗╦═╗╦╔╦╗  ╔═╗╔═╗╦ ╦╦═╗  ═╗ ╦  ╔═╗╔═╗╦ ╦╦═╗
@@ -283,11 +325,12 @@
   bottom: 0
   left: 0
 
-.imgGallX .et_pb_gallery_item img,
-.et_pb_filterable_portfolio_grid .et_pb_portfolio_item img
-  width: 267px
-  height: 267px
-  object-fit: cover
+.imgGallX .et_pb_gallery_item,
+.et_pb_filterable_portfolio_grid .et_pb_portfolio_item
+  img
+    width: 267px
+    height: 267px
+    object-fit: cover
 
 @media all and (max-width: 980px)
   .imgGallX .et_pb_gallery_item img
@@ -334,7 +377,8 @@
     ╔═╗╔═╗╔═╗╦╔╗╔╔═╗╔╦╗╦╔═╗╔╗╔
     ╠═╝╠═╣║ ╦║║║║╠═╣ ║ ║║ ║║║║
     ╩  ╩ ╩╚═╝╩╝╚╝╩ ╩ ╩ ╩╚═╝╝╚╝
- **/                              
+ **/
+
 .et_pb_gallery .et_pb_gallery_pagination,
 .et_pb_filterable_portfolio .et_pb_portofolio_pagination
   transform: translateY(100px)
@@ -354,6 +398,7 @@
   display: flex
   align-items: center
   justify-content: center
+
   .details
     text-align: center
 
